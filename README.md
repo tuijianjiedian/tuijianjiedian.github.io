@@ -1,4 +1,4 @@
-# 免费推荐节点 - 8月27日18.1M/S|免费Clash/Shadowrocket/SSR/V2ray节点推荐，VPN机场购买推荐  更新时间 2025-08-27 10:05:24
+# 免费推荐节点 - 9月2日22.1M/S|免费V2ray/Clash/SSR/Shadowrocket节点推荐，VPN机场购买推荐  更新时间 2025-09-02 10:11:30
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://tuijianjiedian.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://tuijianjiedian.github.io/uploads/2025/08/0-20250827.yaml
-- https://tuijianjiedian.github.io/uploads/2025/08/1-20250827.yaml
-- https://tuijianjiedian.github.io/uploads/2025/08/2-20250827.yaml
-- https://tuijianjiedian.github.io/uploads/2025/08/3-20250827.yaml
-- https://tuijianjiedian.github.io/uploads/2025/08/4-20250827.yaml
+- https://tuijianjiedian.github.io/uploads/2025/09/0-20250902.yaml
+- https://tuijianjiedian.github.io/uploads/2025/09/1-20250902.yaml
+- https://tuijianjiedian.github.io/uploads/2025/09/2-20250902.yaml
+- https://tuijianjiedian.github.io/uploads/2025/09/3-20250902.yaml
+- https://tuijianjiedian.github.io/uploads/2025/09/4-20250902.yaml
 
 ### V2ray订阅链接
 
-- https://tuijianjiedian.github.io/uploads/2025/08/0-20250827.txt
-- https://tuijianjiedian.github.io/uploads/2025/08/1-20250827.txt
-- https://tuijianjiedian.github.io/uploads/2025/08/2-20250827.txt
-- https://tuijianjiedian.github.io/uploads/2025/08/3-20250827.txt
-- https://tuijianjiedian.github.io/uploads/2025/08/4-20250827.txt
+- https://tuijianjiedian.github.io/uploads/2025/09/0-20250902.txt
+- https://tuijianjiedian.github.io/uploads/2025/09/1-20250902.txt
+- https://tuijianjiedian.github.io/uploads/2025/09/2-20250902.txt
+- https://tuijianjiedian.github.io/uploads/2025/09/3-20250902.txt
+- https://tuijianjiedian.github.io/uploads/2025/09/4-20250902.txt
 
 ### Sing-box订阅链接
 
-- https://tuijianjiedian.github.io/uploads/2025/08/20250827.json
+- https://tuijianjiedian.github.io/uploads/2025/09/20250902.json
 
 ## 更多clash节点订阅 ：
 

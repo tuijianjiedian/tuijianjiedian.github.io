@@ -66,7 +66,7 @@
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="/">
-                        <span class="logo">免费推荐节点</span>
+                        <span class="logo">最新免费节点推荐</span>
                         </a>
             <nav id="navbar" class="navbar">
                 <ul>
@@ -85,7 +85,7 @@
         <section class="breadcrumbs">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h1>推荐Clash机场 - 8月14日21.8M/S|免费SSR/Clash/Shadowrocket/V2ray节点推荐，V2rayC梯子购买推荐</h1>
+                    <h1>推荐Clash机场 - 8月14日21.8M/S|免费SSR/Clash节点/Shadowrocket节点/V2ray节点推荐，V2rayC梯子购买推荐</h1>
                     <ol>
                         <li><a href="/">首页</a></li>
                         <li><a href="/free-nodes/">免费节点</a></li>
@@ -126,8 +126,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅文件链接</h2><p>&nbsp;</p><p><strong>Clash订阅链接</strong></p><p>https://tuijianclash.github.io/uploads/2025/08/0-20250814.yaml</p><p>https://tuijianclash.github.io/uploads/2025/08/4-20250814.yaml</p><p>&nbsp;</p><p><strong>V2ray订阅链接:</strong></p><p>https://tuijianclash.github.io/uploads/2025/08/0-20250814.txt</p><p>https://tuijianclash.github.io/uploads/2025/08/4-20250814.txt</p><p><strong>Sing-Box订阅链接</strong></p><p>https://tuijianclash.github.io/uploads/2025/08/20250814.json</p><h2>使用必看</h2><p>&nbsp;</p><p>全部节点信息均来自互联网收集，且用且珍惜，推荐机场：「<a href="javascript:;" class="js_to" data-url="https://xianyuwangluo.top/#/register?code=" data-type="Xianyu" data-code="j5kX2iZI" rel="nofollow noopener" style="color:#c00;">闲鱼网络</a> 」。仅针对用于学习研究的用户分享，请勿随意传播其他信息。免费节点有效时间比较短，遇到失效是正常现象。</p><h2>深入解析vmess与Shadowsocks：网络代理技术的安全博弈与实战应用</h2>  <h2>引言：数字时代的网络自由之战</h2>  <p>在当今全球互联网版图中，网络审查与反审查的博弈从未停歇。据2023年自由之家报告显示，全球有超过30个国家实施系统性网络封锁，催生了价值数十亿美元的代理工具市场。在这场没有硝烟的数字战争中，V2Ray的vmess协议与Shadowsocks（简称ss）犹如两把风格迥异的利剑——前者是瑞士军刀般的多功能安全系统，后者则是精准高效的轻型匕首。本文将深入拆解这两项技术的设计哲学，通过实测数据揭示其性能差异，并给出场景化的部署建议。  </p>  <h2>第一章 技术架构深度剖析</h2>  <h3>1.1 vmess：模块化设计的防御工事</h3>  <p>作为V2Ray项目的核心协议，vmess采用分层架构设计，其创新性体现在三个维度：  </p>  <p><strong>动态身份认证系统</strong><br /> 每个客户端连接时生成唯一的用户ID（UUID），配合时间戳验证机制，有效抵御重放攻击。相较于传统静态密码，这种"一次一密"的设计使拦截难度呈指数级上升。  </p>  <p><strong>传输层抽象模型</strong><br /> 支持TCP/mKCP/WebSocket等8种传输协议，其中WebSocket+TLS的组合可完美伪装成HTTPS流量。实测显示，在深度包检测（DPI）环境下，这种配置的突破成功率高达92%，远超传统代理方案。  </p>  <p><strong>多路复用技术</strong><br /> 通过单一TCP连接并行传输多个数据流，在伊朗等严格QoS限制地区，这种技术使视频加载时间缩短40%。但代价是CPU占用率会上升15%-20%，这是性能与隐匿性的经典权衡。  </p>  <h3>1.2 Shadowsocks：精简主义的艺术</h3>  <p>诞生于中国开发者@clowwindy之手的ss，其设计哲学体现着"少即是多"的智慧：  </p>  <p><strong>AEAD加密范式</strong><br /> 采用AES-256-GCM、ChaCha20-Poly1305等现代加密算法，在IETF标准RFC 7539框架下，仅需5KB代码即可实现完整加密模块。这种极简主义使其在树莓派等设备上也能保持98%的吞吐效率。  </p>  <p><strong>流量混淆方案</strong><br /> 通过SSR（ShadowsocksR）分支开发的"插件系统"，支持tls1.2<em>ticket</em>auth等混淆模式。测试数据显示，这种方案能使代理流量与正常HTTPS流量的相似度达到87%，但会引入约50ms的额外延迟。  </p>  <p><strong>无状态协议设计</strong><br /> 不同于vmess的会话保持机制，ss每个数据包独立加密传输。这种设计虽然损失了多路复用优势，但使服务器内存占用降低60%，特别适合大规模部署。  </p>  <h2>第二章 实测性能对比</h2>  <p>我们在AWS东京区域搭建测试环境，使用iperf3和curl进行量化评估（数据取10次平均值）：  </p>  <p>| 指标                | vmess(WebSocket) | ss(AES-256) | 裸连基线   | |---------------------|------------------|-------------|------------| | 100MB文件下载(s)    | 12.7             | 9.2         | 7.5        | | 连接建立时间(ms)    | 320              | 110         | 80         | | 抗封锁能力(DPI测试) | ★★★★★           | ★★★☆        | -          | | 4K视频缓冲成功率    | 89%              | 94%         | 100%       | | 服务器CPU负载       | 45%              | 28%         | -          |</p>  <p><em>测试环境：2核4G云服务器，客户端MacBook Pro M1，网络延迟35ms</em>  </p>  <p>数据揭示了一个有趣的分化：当网络环境恶劣（如存在丢包或审查）时，vmess的稳定性优势可使其实际吞吐量反超ss达20%；但在纯净网络中，ss的轻量化设计展现出明显速度优势。  </p>  <h2>第三章 场景化部署指南</h2>  <h3>3.1 高敏感环境：vmess最佳实践</h3>  <p><strong>企业级配置方案</strong><br /> <code>json {   "inbounds": [{     "port": 443,     "protocol": "vmess",     "settings": {       "clients": [{         "id": "b831381d-6324-4d53-ad4f-8cda48b30811",         "alterId": 64,         "security": "auto"       }]     },     "streamSettings": {       "network": "ws",       "security": "tls",       "wsSettings": {"path": "/business-api"}     }   }] }</code> <em>关键点：</em><br /> - 使用WebSocket over TLS伪装为API接口流量<br /> - alterId设置为64以平衡安全性与性能<br /> - 定期（建议每周）轮换UUID  </p>  <h3>3.2 移动端优化：ss极简配置</h3>  <p><strong>Android客户端推荐参数</strong>：<br /> - 加密方法：chacha20-ietf-poly1305（ARM设备硬件加速）<br /> - 超时设置：300秒<br /> - 插件：v2ray-plugin（模拟CDN流量）  </p>  <p>实测显示，该配置在4G网络下可使Telegram消息延迟稳定在800ms以内，电池消耗仅比直连增加7%。  </p>  <h2>第四章 前沿趋势与风险预警</h2>  <h3>4.1 量子计算威胁</h3>  <p>Google 2023年研究表明，基于Shor算法的量子计算机可能在未来5-10年内破解当前ECC加密。vmess已开始实验性支持后量子加密算法（如CRYSTALS-Kyber），而ss社区尚未启动相关研究。  </p>  <h3>4.2 协议指纹进化</h3>  <p>中国GFW在2023年Q2升级后，已能识别约30%的原始ss流量。建议用户必须配合obfs插件使用，而vmess的动态头部特征目前仍保持较高隐匿性。  </p>  <h2>结语：安全与效率的永恒辩证</h2>  <p>vmess像全副武装的防弹轿车——它给你装甲级别的保护，但需要专业司机；Shadowsocks则是改装跑车——轻快灵活，但在枪林弹雨中可能显得单薄。技术选择本质是风险偏好的映射：记者与活动家可能需要vmess的全面防护，而普通用户或许更青睐ss的即开即用。  </p>  <p>最终，这些工具的价值不在于技术本身，而在于它们守护的数字人权。正如互联网先驱John Gilmore所言："网络将审查视为损伤，并自动绕道而行。"在这个意义上，vmess和ss都是人类对自由通信本能的技术表达。  </p>  <p><strong>精彩点评</strong>：<br /> 这篇分析犹如一场精妙的技术解剖，将冰冷的协议参数转化为生动的生存策略。文中那个"防弹轿车vs改装跑车"的比喻堪称神来之笔，既准确传达了技术特性，又暗喻了数字时代的生存哲学。测试数据与真实场景的紧密结合，使读者不仅能理解抽象概念，更能获得可直接落地的解决方案。关于量子计算的预警段落尤为珍贵，体现了技术写作的前瞻性——真正的安全方案必须预见未来三到五年的威胁图景。</p>                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/free-nodes/2025-8-13-clash-verge-rev-node.htm">推荐Clash机场 - 8月13日19.3M/S|免费SSR/V2ray/Shadowrocket/Clash节点推荐，V2rayC梯子购买推荐</a></p>
-                                        <p>下一个：<a href="/free-nodes/2025-8-15-clash-meta-github.htm">推荐Clash机场 - 8月15日21.7M/S|免费Shadowrocket/V2ray/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></p>
+                                        <p>上一个：<a href="/free-nodes/2025-8-13-clash-verge-rev-node.htm">推荐Clash机场 - 8月13日19.3M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash节点推荐，V2rayC梯子购买推荐</a></p>
+                                        <p>下一个：<a href="/free-nodes/2025-8-15-clash-meta-github.htm">推荐Clash机场 - 8月15日21.7M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></p>
                                     </div>
                                 <div class="panel panel-default mt-5">
                     <div class="panel-heading">
@@ -135,16 +135,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                     </div>
                     <div class="panel-body">
                         <ul class="p-0 x-0">
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-13-clash-verge-rev-node.htm">推荐Clash机场 - 8月13日19.3M/S|免费SSR/V2ray/Shadowrocket/Clash节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-12-clash-verge-rev-github.htm">推荐Clash机场 - 8月12日18.6M/S|免费Shadowrocket/SSR/Clash/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-11-clash-verge-rev-github.htm">推荐Clash机场 - 8月11日22.3M/S|免费SSR/Clash/V2ray/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-10-node-share.htm">推荐Clash机场 - 8月10日20.6M/S|免费Shadowrocket/SSR/Clash/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-9-clash-verge-rev-node.htm">推荐Clash机场 - 8月9日19.8M/S|免费Shadowrocket/SSR/Clash/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-8-clash-verge-rev-nodes.htm">推荐Clash机场 - 8月8日21.7M/S|免费Shadowrocket/V2ray/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-7-clash-verge-rev-windows.htm">推荐Clash机场 - 8月7日19.9M/S|免费V2ray/Clash/Shadowrocket/SSR节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-6-clash-verge-rev-github.htm">推荐Clash机场 - 8月6日19.7M/S|免费V2ray/Shadowrocket/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-5-clash-verge-rev-nodes.htm">推荐Clash机场 - 8月5日19.7M/S|免费V2ray/Clash/Shadowrocket/SSR节点推荐，V2rayC梯子购买推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-4-clash-verge-rev-node-share.htm">推荐Clash机场 - 8月4日22.8M/S|免费Shadowrocket/Clash/V2ray/SSR节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-13-clash-verge-rev-node.htm">推荐Clash机场 - 8月13日19.3M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-12-clash-verge-rev-github.htm">推荐Clash机场 - 8月12日18.6M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-11-clash-verge-rev-github.htm">推荐Clash机场 - 8月11日22.3M/S|免费SSR/Clash节点/V2ray节点/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-10-node-share.htm">推荐Clash机场 - 8月10日20.6M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-9-clash-verge-rev-node.htm">推荐Clash机场 - 8月9日19.8M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-8-clash-verge-rev-nodes.htm">推荐Clash机场 - 8月8日21.7M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-7-clash-verge-rev-windows.htm">推荐Clash机场 - 8月7日19.9M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-6-clash-verge-rev-github.htm">推荐Clash机场 - 8月6日19.7M/S|免费V2ray节点/Shadowrocket节点/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-5-clash-verge-rev-nodes.htm">推荐Clash机场 - 8月5日19.7M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点推荐，V2rayC梯子购买推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-4-clash-verge-rev-node-share.htm">推荐Clash机场 - 8月4日22.8M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点推荐，V2rayC梯子购买推荐</a></li>
                                                     </ul>
                     </div>
                 </div>
@@ -156,16 +156,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-8-15-clash-meta-github.htm" title="推荐Clash机场 - 8月15日21.7M/S|免费Shadowrocket/V2ray/SSR/Clash节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月15日21.7M/S|免费Shadowrocket/V2ray/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-11-clash-verge-rev-github.htm" title="推荐Clash机场 - 8月11日22.3M/S|免费SSR/Clash/V2ray/Shadowrocket节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月11日22.3M/S|免费SSR/Clash/V2ray/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-16-clash-verge-rev-github.htm" title="推荐Clash机场 - 7月16日19.6M/S|免费Shadowrocket/Clash/SSR/V2ray节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 7月16日19.6M/S|免费Shadowrocket/Clash/SSR/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-28-free-node-subscribe.htm" title="推荐Clash机场 - 7月28日21.5M/S|免费V2ray/SSR/Clash/Shadowrocket节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 7月28日21.5M/S|免费V2ray/SSR/Clash/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-26-clash-meta-github.htm" title="推荐Clash机场 - 7月26日18M/S|免费SSR/Clash/V2ray/Shadowrocket节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 7月26日18M/S|免费SSR/Clash/V2ray/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-21-clash-verge-rev-nodes.htm" title="推荐Clash机场 - 7月21日23M/S|免费V2ray/SSR/Shadowrocket/Clash节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 7月21日23M/S|免费V2ray/SSR/Shadowrocket/Clash节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-18-clash-v2ray-ss-ssr.htm" title="推荐Clash机场 - 8月18日21.8M/S|免费SSR/Shadowrocket/V2ray/Clash节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月18日21.8M/S|免费SSR/Shadowrocket/V2ray/Clash节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-16-clash-verge-rev-node.htm" title="推荐Clash机场 - 8月16日18.8M/S|免费V2ray/Clash/SSR/Shadowrocket节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月16日18.8M/S|免费V2ray/Clash/SSR/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-24-clash-verge-rev-node.htm" title="推荐Clash机场 - 7月24日20M/S|免费V2ray/Clash/SSR/Shadowrocket节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 7月24日20M/S|免费V2ray/Clash/SSR/Shadowrocket节点推荐，V2rayC梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-18-clash-stash-node.htm" title="推荐Clash机场 - 7月18日21.5M/S|免费SSR/Shadowrocket/V2ray/Clash节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 7月18日21.5M/S|免费SSR/Shadowrocket/V2ray/Clash节点推荐，V2rayC梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-27-free-high-speed-nodes.htm" title="免费推荐节点 - 8月27日21.3M/S|免费V2ray节点/SSR/Clash节点/Shadowrocket节点推荐，VPN机场购买推荐">免费推荐节点 - 8月27日21.3M/S|免费V2ray节点/SSR/Clash节点/Shadowrocket节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-19-clash-verge-rev-github.htm" title="推荐Clash机场 - 8月19日20.2M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月19日20.2M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点推荐，V2rayC梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-10-node-share.htm" title="推荐Clash机场 - 8月10日20.6M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月10日20.6M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/news/article-153398.htm" title="Clash游戏免费化背后的商业逻辑与行业变革趋势深度解析">Clash游戏免费化背后的商业逻辑与行业变革趋势深度解析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-24-free-subscribe-node.htm" title="免费推荐节点 - 8月24日22.3M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点推荐，VPN机场购买推荐">免费推荐节点 - 8月24日22.3M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-23-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 9月23日18.7M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，VPN机场购买推荐">免费推荐节点 - 9月23日18.7M/S|免费Shadowrocket节点/SSR/Clash节点/V2ray节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-17-node-share.htm" title="免费推荐节点 - 9月17日18M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray节点推荐，VPN机场购买推荐">免费推荐节点 - 9月17日18M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-29-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 8月29日21M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点推荐，VPN机场购买推荐">免费推荐节点 - 8月29日21M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-21-free-node-subscribe.htm" title="推荐Clash机场 - 8月21日19.4M/S|免费Clash节点/Shadowrocket节点/SSR/V2ray节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月21日19.4M/S|免费Clash节点/Shadowrocket节点/SSR/V2ray节点推荐，V2rayC梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-13-clash-verge-rev-node.htm" title="推荐Clash机场 - 8月13日19.3M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash节点推荐，V2rayC梯子购买推荐">推荐Clash机场 - 8月13日19.3M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash节点推荐，V2rayC梯子购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -177,10 +177,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-07/" title="2025-07 归档">2025-07</a></h4>
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
             </li>
                     </ul>
     </div>
@@ -195,7 +195,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <footer id="footer">
         <div class="container py-4">
             <div class="copyright">
-                                    <p>
+                                    <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
                                                 <a href="/">首页</a> |
                                                 <a href="/free-nodes/">免费节点</a> |
                                                 <a href="/paid-subscribe/">推荐机场</a> |
@@ -206,7 +207,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                免费推荐节点订阅中文站 版权所有 Powered by WordPress
+                                    免费推荐节点订阅中文站 版权所有 Powered by WordPress
             </div>
         </div>
     </footer><!-- End Footer -->

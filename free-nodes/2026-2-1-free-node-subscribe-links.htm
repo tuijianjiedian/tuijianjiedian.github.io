@@ -220,9 +220,19 @@ V2Ray是更高级的网络传输框架，支持多种传输协议和混淆技术
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的全局代理与规则代理有何不同？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
     <div class="panel-body">
-        全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。<hr />    </div>
+        PassWall2 是基于 OpenWRT 的代理管理面板，支持多种协议（V2Ray、Trojan、Shadowsocks 等），拥有图形化界面和分流规则设置功能。它能帮助路由器实现全局代理和智能分流。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 的配置文件可以与 Clash 通用吗？</h5></div>
+    <div class="panel-body">
+        Surfboard 基于 Clash 核心，因此支持大部分 YAML 配置文件，但部分字段如 rule-provider、external-controller 等可能不兼容。建议使用订阅转换工具将 Clash 文件转换为 Surfboard 兼容格式导入。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 可以结合规则实现广告屏蔽吗？</h5></div>
+    <div class="panel-body">
+        可以。Surfboard 支持通过规则文件匹配广告域名或 URL，将其阻断或重定向。结合策略组定期更新规则，可以实现自动广告屏蔽，提升网页浏览体验并节省带宽。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 使用 TAP 驱动时 Windows 弹出网络变更提示，该如何处理？</h5></div>
@@ -230,9 +240,9 @@ V2Ray是更高级的网络传输框架，支持多种传输协议和混淆技术
         这是正常现象，TAP 虚拟网卡会改变系统网络状态。建议在首次启用时允许驱动安装并授予网络权限，若频繁弹窗可在网络设置中调整网络识别类型或将 TAP 设为非计量连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 的配置文件可以与 Clash 通用吗？</h5></div>
+    <div class="panel-heading"><h5>Netch 的全局代理与规则代理有何不同？</h5></div>
     <div class="panel-body">
-        Surfboard 基于 Clash 核心，因此支持大部分 YAML 配置文件，但部分字段如 rule-provider、external-controller 等可能不兼容。建议使用订阅转换工具将 Clash 文件转换为 Surfboard 兼容格式导入。<hr />    </div>
+        全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 使用 WebSocket 是否有安全优势？</h5></div>
@@ -245,6 +255,11 @@ V2Ray是更高级的网络传输框架，支持多种传输协议和混淆技术
         Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组可实现精准分流，提高访问速度和网络稳定性，优化整体网络体验和管理效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式是否支持全局游戏加速？</h5></div>
+    <div class="panel-body">
+        支持。TUN 模式拦截系统 IP 层流量，实现全局代理，确保游戏和其他应用的 UDP/TCP 流量都走代理节点，从而降低延迟，提高游戏体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用在短连接中优势是什么？</h5></div>
     <div class="panel-body">
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，提升吞吐量和连接稳定性，优化网络体验。<hr />    </div>
@@ -252,22 +267,7 @@ V2Ray是更高级的网络传输框架，支持多种传输协议和混淆技术
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 是否比 Clash 更省资源？</h5></div>
     <div class="panel-body">
-        Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 可以结合规则实现广告屏蔽吗？</h5></div>
-    <div class="panel-body">
-        可以。Surfboard 支持通过规则文件匹配广告域名或 URL，将其阻断或重定向。结合策略组定期更新规则，可以实现自动广告屏蔽，提升网页浏览体验并节省带宽。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
-    <div class="panel-body">
-        PassWall2 是基于 OpenWRT 的代理管理面板，支持多种协议（V2Ray、Trojan、Shadowsocks 等），拥有图形化界面和分流规则设置功能。它能帮助路由器实现全局代理和智能分流。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式是否支持全局游戏加速？</h5></div>
-    <div class="panel-body">
-        支持。TUN 模式拦截系统 IP 层流量，实现全局代理，确保游戏和其他应用的 UDP/TCP 流量都走代理节点，从而降低延迟，提高游戏体验。    </div>
+        Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -296,16 +296,16 @@ V2Ray是更高级的网络传输框架，支持多种传输协议和混淆技术
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-1-2-free-v2ray.htm" title="免费推荐节点 - 1月2日19.4M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月2日19.4M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-27-free-subscribe-node.htm" title="免费推荐节点 - 1月27日21.6M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月27日21.6M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-27-free-node-subscribe.htm" title="免费推荐节点 - 12月27日19.7M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 12月27日19.7M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-20-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 1月20日22.5M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月20日22.5M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-12-free-v2ray.htm" title="免费推荐节点 - 1月12日20.3M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月12日20.3M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-11-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 1月11日22.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月11日22.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-31-node-share-links.htm" title="免费推荐节点 - 12月31日18.8M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 12月31日18.8M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-21-node-share-links.htm" title="免费推荐节点 - 12月21日19.7M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 12月21日19.7M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-5-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 1月5日18.2M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月5日18.2M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-7-free-node-subscribe-links.htm" title="免费推荐节点 - 2月7日20.1M/S|免费Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 2月7日20.1M/S|免费Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-24-node-share-links.htm" title="免费推荐节点 - 1月24日20.4M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月24日20.4M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-4-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 2月4日19.1M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 2月4日19.1M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-3-free-node-subscribe.htm" title="免费推荐节点 - 2月3日18.9M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 2月3日18.9M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-10-free-subscribe-node.htm" title="免费推荐节点 - 1月10日20.4M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月10日20.4M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-5-node-share.htm" title="免费推荐节点 - 2月5日18.1M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 2月5日18.1M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-2-free-v2ray-subscribe.htm" title="免费推荐节点 - 2月2日20.3M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐">免费推荐节点 - 2月2日20.3M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-2-1-free-node-subscribe-links.htm" title="免费推荐节点 - 2月1日21.4M/S|免费Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 2月1日21.4M/S|免费Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-12-free-v2ray.htm" title="免费推荐节点 - 1月12日20.3M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 1月12日20.3M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -317,13 +317,10 @@ V2Ray是更高级的网络传输框架，支持多种传输协议和混淆技术
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
             </li>
                     </ul>
     </div>

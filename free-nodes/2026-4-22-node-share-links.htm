@@ -215,16 +215,6 @@ apt-get upgrade -y
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
-    <div class="panel-body">
-        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何结合策略组实现自动节点切换？</h5></div>
-    <div class="panel-body">
-        PassWall2 会定期测试节点延迟和丢包率，结合策略组自动切换到最优节点。无需手动干预即可保证网页、视频和游戏流量高速稳定访问，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 是否可以手动管理多个节点？</h5></div>
     <div class="panel-body">
         支持。用户可以手动输入节点参数或扫描二维码导入节点，并可进行修改或删除。虽然不支持订阅自动更新，但足够满足轻量用户对节点管理和分流的基本需求。<hr />    </div>
@@ -235,14 +225,29 @@ apt-get upgrade -y
         Mihomo 是 Clash Premium 的开源替代项目，兼容原版 Clash 配置文件并扩展了部分新功能。它性能优异、内存占用低，适用于希望自定义构建代理环境的高级用户。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的伪装域名配置需要注意什么？</h5></div>
+    <div class="panel-body">
+        伪装域名必须真实可访问并有有效证书，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁风险，保证节点长期稳定可用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的用户管理面板有哪些功能？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 面板可添加或删除用户、设置带宽限制、生成订阅链接、查看流量统计和节点状态。它提供直观的图形界面，无需命令行操作即可管理服务器资源。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何结合策略组实现自动节点切换？</h5></div>
+    <div class="panel-body">
+        PassWall2 会定期测试节点延迟和丢包率，结合策略组自动切换到最优节点。无需手动干预即可保证网页、视频和游戏流量高速稳定访问，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 的 TLS+伪装模式适合什么情况？</h5></div>
     <div class="panel-body">
         TLS+伪装模式能隐藏真实流量特征，适用于封锁严格的环境。结合域名伪装和证书配置，可以使流量看似普通 HTTPS 请求，提高安全性和抗封锁能力。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
     <div class="panel-body">
-        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
+        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的 PAC 模式如何优化访问？</h5></div>
@@ -255,14 +260,9 @@ apt-get upgrade -y
         Trojan 使用与 HTTPS 类似的 TLS 加密通道，使其数据流难以与普通网页访问区分。它兼具隐蔽性与安全性，几乎无法被防火墙检测。Trojan 协议的主要优势在于稳定、安全、兼容性强，因此广受高级用户青睐。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名配置需要注意什么？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
     <div class="panel-body">
-        伪装域名必须真实可访问并有有效证书，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁风险，保证节点长期稳定可用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的用户管理面板有哪些功能？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 面板可添加或删除用户、设置带宽限制、生成订阅链接、查看流量统计和节点状态。它提供直观的图形界面，无需命令行操作即可管理服务器资源。    </div>
+        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -291,16 +291,16 @@ apt-get upgrade -y
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-15-node-share.htm" title="免费推荐节点 - 4月15日20.8M/S|免费Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月15日20.8M/S|免费Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-high-speed-nodes.htm" title="免费推荐节点 - 5月8日20M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 5月8日20M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-16-free-subscribe-node.htm" title="免费推荐节点 - 4月16日20.4M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月16日20.4M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-22-node-share-links.htm" title="免费推荐节点 - 4月22日18.7M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月22日18.7M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-27-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 3月27日19.3M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 3月27日19.3M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-14-node-share-links.htm" title="免费推荐节点 - 3月14日19.4M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点节点推荐，VPN机场购买推荐">免费推荐节点 - 3月14日19.4M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-2-free-node-subscribe-links.htm" title="免费推荐节点 - 4月2日18.2M/S|免费Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月2日18.2M/S|免费Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-9-free-high-speed-nodes.htm" title="免费推荐节点 - 4月9日22.2M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月9日22.2M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-10-free-high-speed-nodes.htm" title="免费推荐节点 - 3月10日18.5M/S|免费SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 3月10日18.5M/S|免费SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-20-free-v2ray-subscribe.htm" title="免费推荐节点 - 3月20日18M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 3月20日18M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-17-free-high-speed-nodes.htm" title="免费推荐节点 - 3月17日19.8M/S|免费SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 3月17日19.8M/S|免费SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点节点推荐，VPN机场购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-20-free-v2ray.htm" title="免费推荐节点 - 4月20日20.7M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月20日20.7M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-clash-v2ray-ss-ssr.htm" title="免费推荐节点 - 5月6日19M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 5月6日19M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-15-node-share.htm" title="免费推荐节点 - 4月15日20.8M/S|免费Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月15日20.8M/S|免费Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-3-free-node-subscribe-links.htm" title="免费推荐节点 - 5月3日18.2M/S|免费V2ray节点/Clash节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 5月3日18.2M/S|免费V2ray节点/Clash节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-4-free-subscribe-node.htm" title="免费推荐节点 - 5月4日21.7M/S|免费Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点节点推荐，VPN机场购买推荐">免费推荐节点 - 5月4日21.7M/S|免费Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-14-node-share.htm" title="免费推荐节点 - 4月14日18.9M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月14日18.9M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-23-free-v2ray.htm" title="免费推荐节点 - 4月23日19.5M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐">免费推荐节点 - 4月23日19.5M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-2-free-v2ray-subscribe.htm" title="免费推荐节点 - 5月2日22.1M/S|免费SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 5月2日22.1M/S|免费SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -312,10 +312,10 @@ apt-get upgrade -y
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>

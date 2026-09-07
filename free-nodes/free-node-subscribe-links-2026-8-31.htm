@@ -280,8 +280,44 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2026-8-30-free-v2ray-subscribe.htm">免费推荐节点 - 8月30日18M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐</a></p>
+        <p>下一个：<a href="/free-nodes/node-share-links-2026-9-1.htm">免费推荐节点 - 9月1日19.4M/S|免费SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a></p>
     </div>
 <h4>FAQ</h4>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 是否支持 Vless？</h5></div>
+    <div class="panel-body">
+        目前 Potatso Lite 仅支持 Shadowsocks 和 Vmess 协议，不支持 Vless。但开发者正在逐步扩展功能，未来可能加入更多现代代理协议支持。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLess 与 Reality 协议可以结合使用吗？</h5></div>
+    <div class="panel-body">
+        可以。VLess + Reality 是目前最受欢迎的组合之一。它在无证书情况下实现加密传输，同时具备隐蔽性与速度优势，非常适合需要安全访问的高级代理配置。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何判断节点是否支持 UDP 转发以便游戏加速？</h5></div>
+    <div class="panel-body">
+        可通过客户端的协议与节点说明确认是否支持 UDP（例如支持 UDP Relay 或 TUN/TAP 模式）。也可实际用 UDP 测试工具或直接用目标游戏连接进行延迟/丢包测试以验证是否可用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何用 iptables 限制 V2Ray 服务的访问来源？</h5></div>
+    <div class="panel-body">
+        使用 iptables 规则仅允许可信 IP 或 CDN 的中转 IP 访问服务端口，例如 `iptables -A INPUT -p tcp -s <trusted_ip> --dport 443 -j ACCEPT`，并在默认策略下拒绝其他来源，从而降低被扫描与滥用风险。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 的配置文件可以手动编辑吗？</h5></div>
+    <div class="panel-body">
+        Surfboard 的配置文件是基于 YAML 格式的文本文件，可以手动编辑。通过修改策略、节点组或规则部分，用户可自由定制代理逻辑，也可通过导入订阅实现自动更新。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
+    <div class="panel-body">
+        创建包含多个节点的策略组（如 `url-test` 或 `fallback`），设置合适的检测 URL 与检测频率，启用延迟优先或可用性优先策略。这样客户端会自动选择延迟最低或可用节点，提升稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的 PAC 模式如何应用？</h5></div>
+    <div class="panel-body">
+        PAC 模式根据规则自动判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站环境，提高网络访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
+</div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 是否需要证书？</h5></div>
     <div class="panel-body">
@@ -293,44 +329,9 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
         Clash 是一个跨平台的代理客户端，支持多种代理协议，如 Vmess、Vless、Trojan 和 Shadowsocks 等。它主要用于分流管理、网络代理和科学上网，用户可以通过配置文件灵活控制网络流量，实现不同网站或应用走不同代理。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 是否支持 Vless？</h5></div>
-    <div class="panel-body">
-        目前 Potatso Lite 仅支持 Shadowsocks 和 Vmess 协议，不支持 Vless。但开发者正在逐步扩展功能，未来可能加入更多现代代理协议支持。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的 PAC 模式如何应用？</h5></div>
-    <div class="panel-body">
-        PAC 模式根据规则自动判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站环境，提高网络访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
-    <div class="panel-body">
-        创建包含多个节点的策略组（如 `url-test` 或 `fallback`），设置合适的检测 URL 与检测频率，启用延迟优先或可用性优先策略。这样客户端会自动选择延迟最低或可用节点，提升稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLess 与 Reality 协议可以结合使用吗？</h5></div>
-    <div class="panel-body">
-        可以。VLess + Reality 是目前最受欢迎的组合之一。它在无证书情况下实现加密传输，同时具备隐蔽性与速度优势，非常适合需要安全访问的高级代理配置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何用 iptables 限制 V2Ray 服务的访问来源？</h5></div>
-    <div class="panel-body">
-        使用 iptables 规则仅允许可信 IP 或 CDN 的中转 IP 访问服务端口，例如 `iptables -A INPUT -p tcp -s <trusted_ip> --dport 443 -j ACCEPT`，并在默认策略下拒绝其他来源，从而降低被扫描与滥用风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>VLess + Reality 的优势主要体现在哪些方面？</h5></div>
     <div class="panel-body">
-        Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 的配置文件可以手动编辑吗？</h5></div>
-    <div class="panel-body">
-        Surfboard 的配置文件是基于 YAML 格式的文本文件，可以手动编辑。通过修改策略、节点组或规则部分，用户可自由定制代理逻辑，也可通过导入订阅实现自动更新。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何判断节点是否支持 UDP 转发以便游戏加速？</h5></div>
-    <div class="panel-body">
-        可通过客户端的协议与节点说明确认是否支持 UDP（例如支持 UDP Relay 或 TUN/TAP 模式）。也可实际用 UDP 测试工具或直接用目标游戏连接进行延迟/丢包测试以验证是否可用。    </div>
+        Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -378,16 +379,16 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-free-v2ray-subscribe.htm" title="免费推荐节点 - 8月2日19.9M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月2日19.9M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-15.htm" title="免费推荐节点 - 8月15日22.7M/S|免费Clash节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月15日22.7M/S|免费Clash节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-free-v2ray.htm" title="免费推荐节点 - 7月25日18.7M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 7月25日18.7M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-27.htm" title="免费推荐节点 - 8月27日19M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月27日19M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-31.htm" title="免费推荐节点 - 8月31日22.3M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/Clash节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月31日22.3M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/Clash节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-free-high-speed-nodes.htm" title="免费推荐节点 - 8月22日19.8M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月22日19.8M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-30-free-v2ray-subscribe.htm" title="免费推荐节点 - 8月30日18M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月30日18M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-28-free-subscribe-node.htm" title="免费推荐节点 - 8月28日22.4M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月28日22.4M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-26-free-node-subscribe.htm" title="免费推荐节点 - 7月26日20.9M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 7月26日20.9M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-21-free-node-subscribe-links.htm" title="免费推荐节点 - 7月21日19M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 7月21日19M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-v2ray-2026-8-23.htm" title="免费推荐节点 - 8月23日19.9M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月23日19.9M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-subscribe-node.htm" title="免费推荐节点 - 8月10日19.4M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Clash节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月10日19.4M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Clash节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-19.htm" title="免费推荐节点 - 8月19日20.3M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月19日20.3M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-16-node-share.htm" title="免费推荐节点 - 8月16日19.5M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月16日19.5M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点节点推荐，VPN机场购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-5.htm" title="免费推荐节点 - 8月5日18.6M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月5日18.6M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-node-subscribe.htm" title="免费推荐节点 - 8月12日22.7M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月12日22.7M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-24-free-node-subscribe.htm" title="免费推荐节点 - 8月24日21.7M/S|免费Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐">免费推荐节点 - 8月24日21.7M/S|免费Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点节点推荐，VPN机场购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-7.htm" title="免费推荐节点 - 9月7日19M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，VPN机场购买推荐">免费推荐节点 - 9月7日19M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，VPN机场购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -399,10 +400,10 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
